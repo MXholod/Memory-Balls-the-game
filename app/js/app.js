@@ -1,14 +1,20 @@
-$( function() {
-    $( "#draggable1" ).draggable();
-	$( "#draggable2" ).draggable();
-    $( "#droppable1" ).droppable({
-      drop:function( event, ui ) {
-        $(this).addClass( "dropped-el" ).find( "p" ).html( "Dropped!" );
-      }
+$(function(){
+	//Drop zone
+	$(".drop-row-1").droppable({
+		drop:function( event, ui ) {
+			$(this).addClass("dropped").find("p").html("Element was dropped!");
+			//console.log(event," Dropped");
+		}
     });
-	 $( "#droppable2" ).droppable({
-      drop:function( event, ui ) {
-        $(this).css({"background-color":"yellow"}).find( "p" ).html( "Dropped!" );
-      }
-    });
-  } );
+	//Drag elements
+	$("#jar1").draggable({
+		start:function(event,ui){
+			//event.clientX;
+			//event.clientY;
+		},
+		drag:function(event,ui){
+			//$(this).attr("transform",'matrix(1 0 0 1)'+x+' '+y+')');
+		},
+		//revert:true
+	});
+});
