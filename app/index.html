@@ -10,9 +10,15 @@
 	<!-- endbuild -->
 	<style>
 	.bt-1{
-		animation:butterflies 4s alternate infinite;
+		animation:butterflies1 4s alternate infinite;
 	}
-	@keyframes butterflies{
+	.bt-2{
+		animation:butterflies2 5s alternate infinite;
+	}
+	.bt-3{
+		animation:butterflies3 3s alternate infinite;
+	}
+	@keyframes butterflies1{
 		from{
 			cx:15;
 			cy:40;
@@ -21,17 +27,67 @@
 			cy:30;
 		}
 	}
+	@keyframes butterflies2{
+		from{
+			cx:20;
+			cy:20;
+		}to{
+			cx:35;
+			cy:40;
+		}
+	}
+	@keyframes butterflies3{
+		from{
+			cx:30;
+			cy:30;
+		}to{
+			cx:20;
+			cy:40;
+		}
+	}
 	</style>
 </head>
 <body>
 	<div class="memory-balls">
 		<div class="memory-balls__drop-zone">
-			<div class="drop-row-1">
-			  <p>Drop jar here</p>
+			<div class="memory-balls__drop-row-1">
+			  <div class="memory-balls__drop-box" data-id='a'></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			</div>
+			<div class="memory-balls__drop-row-2">
+			  <div class="memory-balls__drop-box memory-balls__drop-box-2" data-id='b'></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			</div>
+			<div class="memory-balls__drop-row-3">
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			</div>
+			<div class="memory-balls__drop-row-4">
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			</div>
+			<div class="memory-balls__drop-row-5">
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
+			  <div class="memory-balls__drop-box"></div>
 			</div>
 		</div>
 		<div class="memory-balls__drag-zone">
-			<div id="jar1">
+			<div id="jar1" data-id='a'>
 				<svg version="1.1" 
 					xmlns="http://www.w3.org/2000/svg" 
 					xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -44,10 +100,30 @@
 					   </defs>
 						<g>
 							<path d="M16,10 L16,15 L10,19 L10,45 L13,47 L37,47 L40,45 L40,19 L34,15 L34,10 L16,10" stroke-width="2" stroke="#000"  fill="#42aaff" stroke-linejoin="round" />
-							<path d="M15,3 35,3 C38,3 38,6 35,6 C38,6 38,9 35,9 L15,9 C12,9 12,6 15,6 C12,6 12,3 15,3" stroke-width="2" stroke="#000"  fill="#e6e6fa" stroke-linejoin="round" />
-							<circle  class="bt-1" cx="15" cy="40" r="5" fill="url(#grad1)"  stroke="none" />
-							<circle  cx="20" cy="20" r="5" fill="url(#grad1)"  stroke="none" />
-							<circle  cx="30" cy="30" r="5" fill="url(#grad1)"  stroke="none" />
+							<path d="M15,3 35,3 C38,3 38,6 35,6 C38,6 38,9 35,9 L15,9 C12,9 12,6 15,6 C12,6 12,3 15,3" stroke-width="2" stroke="#000" fill="#e6e6fa" stroke-linejoin="round" />
+							<circle class="bt-1" cx="15" cy="40" r="5" fill="url(#grad1)" stroke="none" />
+							<circle class="bt-2" cx="20" cy="20" r="5" fill="url(#grad1)" stroke="none" />
+							<circle class="bt-3" cx="30" cy="30" r="5" fill="url(#grad1)" stroke="none" />
+						</g>
+				</svg>
+			</div>
+			<div id="jar2" data-id='b'>
+				<svg version="1.1" 
+					xmlns="http://www.w3.org/2000/svg" 
+					xmlns:xlink="http://www.w3.org/1999/xlink" 
+					xml:space="preserve" viewBox="0 0 50 50" width="50px" height="50px">
+						<defs>
+							<radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+								<stop offset="0%" style="stop-color:rgb(255,255,255); stop-opacity:1" />
+								<stop offset="100%" style="stop-color:#dfd67a; stop-opacity:0" />
+							</radialGradient>
+					   </defs>
+						<g>
+							<path d="M16,10 L16,15 L10,19 L10,45 L13,47 L37,47 L40,45 L40,19 L34,15 L34,10 L16,10" stroke-width="2" stroke="#000"  fill="#bd42ff" stroke-linejoin="round" />
+							<path d="M15,3 35,3 C38,3 38,6 35,6 C38,6 38,9 35,9 L15,9 C12,9 12,6 15,6 C12,6 12,3 15,3" stroke-width="2" stroke="#000" fill="#e6e6fa" stroke-linejoin="round" />
+							<circle class="bt-1" cx="15" cy="40" r="5" fill="url(#grad1)" stroke="none" />
+							<circle class="bt-2" cx="20" cy="20" r="5" fill="url(#grad1)" stroke="none" />
+							<circle class="bt-3" cx="30" cy="30" r="5" fill="url(#grad1)" stroke="none" />
 						</g>
 				</svg>
 			</div>
